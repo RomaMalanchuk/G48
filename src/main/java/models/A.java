@@ -11,7 +11,7 @@ public class A extends Parent {
     public A() {
     	super("models.A");
     	
-        this.my_array = new String[]{ "10", "20", "30", "40"};
+        this.my_array = new String[]{ "100", "20", "30", "40"};
         LOGGER.info(String.format("Новый пустой экземпляр класса %s%n", getClass().getName()));
     }
 
