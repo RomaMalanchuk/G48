@@ -25,9 +25,9 @@ public class LoginPageTest extends BaseTest {
         loginPage.login(System.getProperty("username"), System.getProperty("password"))
                 .openProjectG48()
                 .showCommitMessage()
-                .openSourceCode()
-                .openPomXml()
-                .getVersionSeleniumJava("3.141.59");
+                .openSourceCode()        //открытие вкладки Code
+                .openPomXml()            //открытие файла пом хмл
+                .getVersionSeleniumJava("3.141.59");               //вывод и сравнение версии
     }
 
     @Test
@@ -35,12 +35,12 @@ public class LoginPageTest extends BaseTest {
         loginPage.login(System.getProperty("username"), System.getProperty("password"))
                 .openProjectG48()
                 .showCommitMessage()
-                .logNamesOfProjectTabs();
+                .logNamesOfProjectTabs();  //вывод название всех вкладок проекта
     }
 
     @Test
     public void searchProjectMyne() {
         loginPage.login(System.getProperty("username"), System.getProperty("password"))
-                .searchMyProjectPage();
+                .searchMyProjectPage();  //поиск проекта в строке поиска и открытие его
     }
 }

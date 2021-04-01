@@ -13,8 +13,8 @@ import java.util.List;
 public class NegativeLoginTest extends BaseTest{
 
     private LoginPage loginPage;
-    private String username;
-    private String password;
+    private final String username;
+    private final String password;
 
     public NegativeLoginTest(String username, String password) {
         this.username = username;
