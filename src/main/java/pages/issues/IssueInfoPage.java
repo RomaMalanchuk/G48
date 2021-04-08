@@ -14,11 +14,13 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class IssueInfoPage extends BaseProjectPage {
 
+    private static final String title = "Страница задачи";
+
     public IssueInfoPage(WebDriver driver) {
         super(driver);
     }
 
-    private final By title = By.xpath("//span[@class = 'js-issue-title markdown-title']");
+    private final By titleOnPage = By.xpath("//span[@class = 'js-issue-title markdown-title']");
     private final By body = By.xpath("//td[@class = 'd-block comment-body markdown-body  js-comment-body']");
 
     private final By labels = By.xpath("//a[@class = 'IssueLabel hx_IssueLabel d-inline-block v-align-middle']");
@@ -26,7 +28,8 @@ public class IssueInfoPage extends BaseProjectPage {
     public IssueInfoPage validateIssue(String expectedTitle,
                                        String expectedBody,
                                        List<String> expectedLabels){
-        assertEquals(expectedTitle, waitFor10.until(visibilityOf(driver.findElement(title))).getText());
+        LOG.info("Проверяем успешность создания задачи и соответствие её полей");
+        assertEquals(expectedTitle, waitFor10.until(visibilityOf(driver.findElement(titleOnPage))).getText());
         assertEquals(expectedBody, driver.findElement(body).getText());
 
         List<WebElement> labelsOnPage =  driver.findElements(labels);
@@ -36,6 +39,7 @@ public class IssueInfoPage extends BaseProjectPage {
             labelsTitles.add(label.getText());
         });
         assertEquals(expectedLabels, labelsTitles);
+        LOG.info("Создание успешно. Тест пройден");
         return this;
     }
 
