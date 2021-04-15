@@ -4,6 +4,7 @@ import helpers.FileHelper;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static helpers.ExcelHelper.readDataFromExcelFile;
@@ -37,6 +38,13 @@ public class SomeTestTest {
                                 "/C:\\Users\\romam\\IdeaProjects\\G48\\src\\test\\resources\\testData\\negative_login_data.txt",
                                 "Sheet1")).getPath(), "Automated Sheet")
                 .forEach(System.out::println);
+    }
+
+    @Test
+    public void checkExcelProvider(){
+        readDataFromExcelFile("C:\\Users\\romam\\IdeaProjects\\G48\\src\\test\\resources\\testData\\Sheet1.xls",
+                "Sheet1")
+                .forEach(objectArray -> System.out.println(Arrays.asList(objectArray)));
     }
 }
 
