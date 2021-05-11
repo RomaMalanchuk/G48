@@ -38,7 +38,7 @@ public class SomeTestTest {
                 writeToExcelFileAndGet(
                         "C:\\Users\\romam\\IdeaProjects\\G48\\target\\test-classes",
                         readDataFromExcelFile(
-                                "/C:\\Users\\romam\\IdeaProjects\\G48\\src\\test\\resources\\testData\\negative_login_data.txt",
+                                "/C:\\Users\\romam\\IdeaProjects\\G48\\src\\test\\resources\\testData\\Sheet1.xls",
                                 "Sheet1")).getPath(), "Automated Sheet")
                 .forEach(System.out::println);
     }
