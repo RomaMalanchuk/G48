@@ -1,5 +1,6 @@
 package pages.issues;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,6 +26,7 @@ public class IssueInfoPage extends BaseProjectPage {
 
     private final By labels = By.xpath("//a[@class = 'IssueLabel hx_IssueLabel d-inline-block v-align-middle']");
 
+    @Step("Проверка успешности создание Issue")
     public IssueInfoPage validateIssue(String expectedTitle,
                                        String expectedBody,
                                        List<String> expectedLabels){

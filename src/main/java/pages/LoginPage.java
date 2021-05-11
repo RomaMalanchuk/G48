@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,7 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
+    @Step("Данные логин пароля")
     public MainPage login(String username, String password){
         driver.findElement(loginField).sendKeys(username);
         driver.findElement(passwordField).sendKeys(password);
@@ -24,6 +26,7 @@ public class LoginPage extends BasePage {
         return new MainPage(driver);
     }
 
+    @Step("Валидация сообщения об ошибке")
     public LoginPage validateErrorMessage(String errorMessage){
         waitFor25.until(visibilityOf(driver.findElement(errorMessageText)));
         Assert.assertEquals(errorMessage, driver.findElement(errorMessageText).getText());

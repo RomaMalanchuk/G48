@@ -1,6 +1,7 @@
 package tests.ui;
 
 import helpers.FileHelper;
+import io.qameta.allure.Description;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import static org.junit.Assert.assertTrue;
 
 public class SomeTestTest {
 
+    @Description("Проверка вычитки из файла")
     @Test
     public void some() {
         //  System.out.println(readFile("C:\\Users\\romam\\IdeaProjects\\G48\\src\\test\\java\\resources.properties"));
@@ -29,6 +31,7 @@ public class SomeTestTest {
         writeFileAndGet(data, "our_test.txt").exists();
     }
 
+    @Description("Проверка записи данных в эксель")
     @Test
     public void someExcel() {
         readDataFromExcelFile(
@@ -40,6 +43,7 @@ public class SomeTestTest {
                 .forEach(System.out::println);
     }
 
+    @Description("Проверка вычитки данных из эксель")
     @Test
     public void checkExcelProvider(){
         readDataFromExcelFile("C:\\Users\\romam\\IdeaProjects\\G48\\src\\test\\resources\\testData\\Sheet1.xls",

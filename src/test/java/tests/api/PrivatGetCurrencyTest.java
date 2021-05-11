@@ -1,5 +1,6 @@
 package tests.api;
 
+import io.qameta.allure.Description;
 import io.restassured.path.json.JsonPath;
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.Matchers;
@@ -34,7 +35,7 @@ public class PrivatGetCurrencyTest extends BaseApiTest{
             add(11);
         }};
     }
-
+    @Description("Тест АПИ приватбанка")
     @Test
     public void checkCurrencyInPB(){
         //     String response =

@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.code.CodePage;
@@ -20,12 +21,14 @@ public abstract class BaseProjectPage extends BaseAuthorizedPage {
     private final By Insights = By.xpath("//span[@data-content = 'Insights']");
     private final By settingsTab = By.xpath("//span[@data-content = 'Settings']");
 
+    @Step("Открытие вкладки Code")
     public CodePage openSourceCode() {
         driver.findElement(codeTab).click();
         return new CodePage(driver);
 
     }
 
+    @Step("Открытие вкладки Issue")
     public IssuesPage openIssues() {
         driver.findElement(IssuesTab).click();
         return new IssuesPage(driver);

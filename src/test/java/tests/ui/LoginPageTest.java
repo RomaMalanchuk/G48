@@ -1,9 +1,17 @@
 package tests.ui;
 
+import io.qameta.allure.*;
+import io.qameta.allure.junit4.DisplayName;
+
 import org.junit.Before;
 import org.junit.Test;
 import pages.LoginPage;
 
+
+@Feature("pozitive authorization")
+@Story("Github auth")
+@Owner("RMalanchuk")
+@Severity(SeverityLevel.CRITICAL)
 public class LoginPageTest extends BaseTest {
 
 
@@ -14,12 +22,17 @@ public class LoginPageTest extends BaseTest {
         loginPage = new LoginPage(driver);
     }
 
+    @Description("Проверка ввода неправильных логина и пароля")
+    @Issue("")
     @Test
     public void checkNegativeLogin() {
         loginPage.login("roagsg", "sdgsdg");
         loginPage.validateErrorMessage("Incorrect username or password.");
     }
 
+    @Description("вывод и сравнение версии")
+    @Issue("")
+    @DisplayName("Показать версию джавы в пом хмл и сравнить ее")
     @Test
     public void showCommitMessageTest() {
         loginPage.login(System.getProperty("username"), System.getProperty("password"))
@@ -30,6 +43,8 @@ public class LoginPageTest extends BaseTest {
                 .getVersionSeleniumJava("3.141.59");               //вывод и сравнение версии
     }
 
+    @Description("вывод название всех вкладок проекта")
+    @Issue("")
     @Test
     public void logTabsOfProject() {
         loginPage.login(System.getProperty("username"), System.getProperty("password"))
@@ -38,6 +53,7 @@ public class LoginPageTest extends BaseTest {
                 .logNamesOfProjectTabs();  //вывод название всех вкладок проекта
     }
 
+    @Description("Открытие нашего проекта")
     @Test
     public void searchProjectMyne() {
         loginPage.login(System.getProperty("username"), System.getProperty("password"))

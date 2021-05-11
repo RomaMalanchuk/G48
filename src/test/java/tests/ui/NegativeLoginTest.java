@@ -1,5 +1,6 @@
 package tests.ui;
 
+import io.qameta.allure.Description;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,6 +38,7 @@ public class NegativeLoginTest extends BaseTest{
         return result;
     }
 
+    @Description("Проверка ввода неправильных логина и пароля")
     @Test
     public void checkNegativeLogin(){
         loginPage.login(this.username,this.password);

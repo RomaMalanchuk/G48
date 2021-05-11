@@ -1,5 +1,6 @@
 package tests.ui;
 
+import io.qameta.allure.Description;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,6 +42,7 @@ public class IssueCreationTest extends BaseTest{
         this.page = new LoginPage(this.driver);
     }
 
+    @Description("Проверка создание новой Issue")
     @Test
     public void checkIssueCreation(){
         this.page.login(getProperty("username"), getProperty("password"))
