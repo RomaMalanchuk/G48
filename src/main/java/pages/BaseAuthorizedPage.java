@@ -7,8 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public abstract class BaseAuthorizedPage extends BasePage {
 
-    public BaseAuthorizedPage(WebDriver driver) {
-        super(driver);
+    public BaseAuthorizedPage(WebDriver driver, String title) {
+        super(driver, title);
     }
 
     private final By userProfileButton = By.xpath("//summary[@aria-label='View profile and more']");

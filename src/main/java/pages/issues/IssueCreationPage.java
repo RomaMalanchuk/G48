@@ -15,7 +15,7 @@ public class IssueCreationPage extends BaseProjectPage {
     private static final String title = "Страница создания задачи";
 
     public IssueCreationPage(WebDriver driver) {
-        super(driver);
+        super(driver, title);
     }
 
     private final By titleField = By.id("issue_title");

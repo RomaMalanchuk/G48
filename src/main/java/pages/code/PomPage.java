@@ -8,8 +8,11 @@ import pages.BaseProjectPage;
 import static org.junit.Assert.assertEquals;
 
 public class PomPage extends BaseProjectPage {
+
+    private static final String title = "Страница pompage";
+
     public PomPage(WebDriver driver) {
-        super(driver);
+        super(driver, title);
     }
     private final By pomVersion = By.xpath("//*[@id='LC50']");
 

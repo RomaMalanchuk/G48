@@ -10,8 +10,10 @@ import java.util.List;
 
 public class CodePage extends BaseProjectPage {
 
+    private static final String title = "Страница code page";
+
     public CodePage(WebDriver driver) {
-        super(driver);
+        super(driver, title);
     }
 
     private final By commitMessageText = By.xpath("//a[@data-test-selector = 'commit-tease-commit-message']");

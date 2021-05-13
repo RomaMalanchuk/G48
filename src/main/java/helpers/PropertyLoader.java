@@ -17,7 +17,7 @@ public class PropertyLoader {
         Properties prop = new Properties();
         try{
             prop.load(new FileInputStream(System.getProperty("user.dir")
-            +"src/test/resources/config/app.properties"));
+            + "/src/test/resources/config/app.properties"));
         }catch (IOException e) {
             log.error(e);
         }

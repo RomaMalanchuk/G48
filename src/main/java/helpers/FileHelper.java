@@ -38,7 +38,7 @@ public class FileHelper {
 
     public static File writeFileAndGet(List<String> data, String name){
         log.debug("Пишем файл " + name);
-        File parent = new File("/home/bohdan/opensource/G48Automation/target/outputFiles");
+        File parent = new File("C:\\Users\\romam\\IdeaProjects\\G48\\target\\outputFiles");
         if (!parent.exists()){
             log.debug("Создаю недостающие директории");
             parent.mkdirs();

@@ -18,7 +18,7 @@ public class IssueInfoPage extends BaseProjectPage {
     private static final String title = "Страница задачи";
 
     public IssueInfoPage(WebDriver driver) {
-        super(driver);
+        super(driver, title);
     }
 
     private final By titleOnPage = By.xpath("//span[@class = 'js-issue-title markdown-title']");

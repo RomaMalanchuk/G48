@@ -1,8 +1,22 @@
 package rules;
 
-public class RestAssuredAllureFilter {//extends AllureRestAssured {
+import io.qameta.allure.Allure;
+import io.qameta.allure.AllureLifecycle;
+import io.qameta.allure.model.Parameter;
+import io.qameta.allure.model.Status;
+import io.qameta.allure.model.StepResult;
+import io.qameta.allure.restassured.AllureRestAssured;
+import io.restassured.filter.FilterContext;
+import io.restassured.response.Response;
+import io.restassured.specification.FilterableRequestSpecification;
+import io.restassured.specification.FilterableResponseSpecification;
 
-    /*
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+public class RestAssuredAllureFilter extends AllureRestAssured {
+
     public Response filter(FilterableRequestSpecification requestSpec,
                            FilterableResponseSpecification responseSpec,
                            FilterContext filterContext) {
@@ -12,15 +26,16 @@ public class RestAssuredAllureFilter {//extends AllureRestAssured {
         List<Parameter> params = new ArrayList<>();
         requestSpec.getRequestParams()
                 .forEach((key, value) ->
-                                 params.add(new Parameter().setName(key)
-                                                    .setValue(value)));
+                        params.add(new Parameter().setName(key)
+                                .setValue(value)));
         requestSpec.getFormParams()
                 .forEach((key, value) ->
-                                 params.add(new Parameter().setName(key)
-                                                    .setValue(value)));
+                        params.add(new Parameter().setName(key)
+                                .setValue(value)));
         stepResult.setParameters(params);
         lifecycle.startStep(UUID.randomUUID()
-                                    .toString(), stepResult);
+                .toString(), stepResult);
+
         Response response;
         try {
             response = super.filter(requestSpec, responseSpec, filterContext);
@@ -29,5 +44,6 @@ public class RestAssuredAllureFilter {//extends AllureRestAssured {
         }
         return response;
     }
-     */
+
+
 }

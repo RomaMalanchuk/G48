@@ -7,8 +7,8 @@ import pages.code.CodePage;
 import pages.issues.IssuesPage;
 
 public abstract class BaseProjectPage extends BaseAuthorizedPage {
-    public BaseProjectPage(WebDriver driver) {
-        super(driver);
+    public BaseProjectPage(WebDriver driver, String title) {
+        super(driver, title);
     }
 
     private final By codeTab = By.xpath("//span[@data-content = 'Code']");
