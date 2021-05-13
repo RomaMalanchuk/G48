@@ -1,12 +1,31 @@
 {
-  "chrome": {
-    "default": "89.0",
+  "firefox": {
+    "default": "84.0",
     "versions": {
-      "89.0": {
+      "84.0": {
+        "image": "selenoid/firefox:84.0",
+        "port": "4444",
+        "path": "/wd/hub",
+        "tmpfs": {"/tmp":"size=512m"}
+      }
+    }
+  },
+  "chrome": {
+    "default": "90.0",
+    "versions": {
+      "87.0": {
         "image": "selenoid/chrome:89.0",
         "port": "4444",
-        "path": "/"
-      }
+        "path": "/"}
+    }
+  },
+  "opera": {
+    "default": "73.0",
+    "versions": {
+      "73.0": {
+        "image": "selenoid/opera:73.0",
+        "port": "4444",
+        "path": "/"}
     }
   }
 }

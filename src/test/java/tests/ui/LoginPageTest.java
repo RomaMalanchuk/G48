@@ -32,7 +32,6 @@ public class LoginPageTest extends BaseTest {
 
     @Description("вывод и сравнение версии")
     @Issue("")
-    @DisplayName("Показать версию джавы в пом хмл и сравнить ее")
     @Test
     public void showCommitMessageTest() {
         loginPage.login(System.getProperty("username"), System.getProperty("password"))

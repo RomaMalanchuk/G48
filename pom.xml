@@ -11,6 +11,7 @@
     <properties>
         <driver.dir.path>${project.basedir}/src/main/resources/drivers</driver.dir.path>
         <browser>${browser}</browser>
+        <browser.version>${browser.version}</browser.version>
         <driver.name>${driver.name}</driver.name>
         <driver.path>${driver.path}</driver.path>
         <aspectj.version>1.8.10</aspectj.version>
@@ -86,7 +87,7 @@
             <id>Chrome</id>
             <properties>
                 <browser>chrome</browser>
-                <browser.version>89.0</browser.version>
+                <browser.version>90.0</browser.version>
                 <driver.name>webdriver.chrome.driver</driver.name>
                 <driver.path>${driver.dir.path}/chrome/${browser.version}/chromedriver.exe</driver.path>
             </properties>

@@ -1,0 +1,43 @@
+version: "3.2"
+
+services:
+  #Selenoid (Remote browser containers)
+  selenoid:
+    network_mode: bridge
+    image: aerokube/selenoid:latest-release
+    volumes:
+      - ./selenoid/:/etc/selenoid/
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./selenoid/video/:/opt/selenoid/video/
+    environment:
+      - OVERRIDE_VIDEO_OUTPUT_DIR=$PWD/selenoid/video/
+    command: ["-conf", "/etc/selenoid/config/browsers.json",
+              "-video-output-dir", "/opt/selenoid/video",
+              "-log-output-dir", "/opt/selenoid/logs",
+              "--timeout", "1h"]
+    ports:
+      - "4444:4444"
+
+
+  #allure:
+    #network_mode: bridge
+    #image: "frankescobar/allure-docker-service"
+    #environment:
+      #CHECK_RESULTS_EVERY_SECONDS: 1
+      #KEEP_HISTORY: "TRUE"
+    #ports:
+      #- 4040:4040
+      #- 5050:5050
+    #volumes:
+      #- ./allure/allure-results/:/app/allure-results/
+
+  selenoid-ui:
+    image: "aerokube/selenoid-ui"
+    network_mode: bridge
+    depends_on:
+      - selenoid
+    links:
+      - selenoid
+    ports:
+      - 8090:8080
+    command: ["--selenoid-uri", "http://selenoid:4444"]
