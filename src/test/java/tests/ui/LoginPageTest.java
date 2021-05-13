@@ -30,7 +30,7 @@ public class LoginPageTest extends BaseTest {
         loginPage.validateErrorMessage("Incorrect username or password.");
     }
 
-    @Description("вывод и сравнение версии")
+    @Description("Вывод и сравнение версии")
     @Issue("")
     @Test
     public void showCommitMessageTest() {
@@ -42,7 +42,7 @@ public class LoginPageTest extends BaseTest {
                 .getVersionSeleniumJava("3.141.59");               //вывод и сравнение версии
     }
 
-    @Description("вывод название всех вкладок проекта")
+    @Description("Вывод названия всех вкладок проекта")
     @Issue("")
     @Test
     public void logTabsOfProject() {
@@ -52,7 +52,7 @@ public class LoginPageTest extends BaseTest {
                 .logNamesOfProjectTabs();  //вывод название всех вкладок проекта
     }
 
-    @Description("Открытие нашего проекта")
+    @Description("Поиск нашего проэкта")
     @Test
     public void searchProjectMyne() {
         loginPage.login(System.getProperty("username"), System.getProperty("password"))

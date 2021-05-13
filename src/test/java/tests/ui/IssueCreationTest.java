@@ -1,6 +1,9 @@
 package tests.ui;
 
 import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,6 +16,9 @@ import java.util.List;
 import static helpers.ExcelHelper.readDataProviderFromExcel;
 import static java.lang.System.getProperty;
 
+@Feature("issue creation")
+@Story("Github auth")
+@Owner("RMalanchuk")
 @RunWith(Parameterized.class)
 public class IssueCreationTest extends BaseTest{
 

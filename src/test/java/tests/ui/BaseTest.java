@@ -67,7 +67,7 @@ public abstract class BaseTest {
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", false);
             try {
-                this.driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+                this.driver = new RemoteWebDriver(new URL("http://localhost:4444"), capabilities);
             } catch (MalformedURLException e) {
 
             }
