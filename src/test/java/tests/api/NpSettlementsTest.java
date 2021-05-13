@@ -1,4 +1,4 @@
-package tests.api;
+/*package tests.api;
 
 import io.qameta.allure.Description;
 import io.restassured.http.ContentType;
@@ -51,3 +51,5 @@ public class NpSettlementsTest extends BaseApiTest{
 
 
 }
+
+ */
